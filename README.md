@@ -7,7 +7,7 @@
 
 **1. Escenario/Caso-02 Gestion de Aeropuertos :**
 
-## Prerequisitos de las APIS:
+## Prerequisitos de la API:
 **1.1 Desargar el archivo txt llamado Datos_Neo4j.txt**
 
 **1.2 Inicializar primeramente el contenedor de redis**
