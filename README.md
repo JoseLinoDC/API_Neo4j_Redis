@@ -8,8 +8,10 @@
 **1. Considere el caso de una empresa mayorista de materiales de construcción. Todas las ventas que hace una sucursal implica la emisión de una factura. A la empresa le interesan los siguientes aspectos:**
 
 ## Prerequisitos de las APIS:
-**1.1 Desargar el archivo txt llamado datos.txt**
-
+**1.1 Desargar el archivo txt llamado Datos_Neo4j.txt**
+```
+docker run -d --name api_neo4j_redis -p 3000:3000 joselino25/api_neo4j_redis:v1.0
+```
 **1.2. Descargar desde DockerHub la imagen de la APIS con el siguiente comando:**
 ```
 docker pull joselino25/api_neo4j_redis:v1.0
