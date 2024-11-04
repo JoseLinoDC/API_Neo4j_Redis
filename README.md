@@ -9,15 +9,15 @@
 
 ## Prerequisitos de las APIS:
 **1.1 Desargar el archivo txt llamado Datos_Neo4j.txt**
-```
-docker run -d --name api_neo4j_redis -p 3000:3000 joselino25/api_neo4j_redis:v1.0
-```
+
 **1.2. Descargar desde DockerHub la imagen de la APIS con el siguiente comando:**
 ```
 docker pull joselino25/api_neo4j_redis:v1.0
 ```
 **1.3 Inicializar el contenedor que fue descargado**
-
+```
+docker run -d --name api_neo4j_redis -p 3000:3000 joselino25/api_neo4j_redis:v1.0
+```
 **1.4 Utilizar los datos del archivo .txt que se encuentra en el proyecto**
 
 
