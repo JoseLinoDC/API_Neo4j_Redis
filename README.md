@@ -30,6 +30,9 @@ docker pull joselino25/api_neo4j_redis:v1.0
 http://localhost:7474/browser/
 ```
 
+> [!NOTE]
+> **Si desea hacer pruebas de la API con postman use la coleccion que  se encuentra en el proyecto**
+> **Postman Collection:** Consultas NoSql.postman_collection.json
 
 
 ## Consultas Cypher
