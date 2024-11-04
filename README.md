@@ -10,7 +10,7 @@
 ## Prerequisitos de las APIS:
 **1.1 Desargar el archivo txt llamado Datos_Neo4j.txt**
 
-**1.2. Descargar desde DockerHub la imagen de la APIS con el siguiente comando:**
+**1.2. Descargar desde DockerHub la imagen de la API con el siguiente comando:**
 ```
 docker pull joselino25/api_neo4j_redis:v1.0
 ```
@@ -230,3 +230,4 @@ Ruta en Postman
 ```
 /PUT http://localhost:3000/api/actualizar-empresa
 ```
+
