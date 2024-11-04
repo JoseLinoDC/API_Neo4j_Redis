@@ -5,7 +5,7 @@
 > **Grupo:** 5A (7:00-8:00)  
 > **Docente:** Jorge Saúl Montes Cáceres  
 
-**1. Considere el caso de una empresa mayorista de materiales de construcción. Todas las ventas que hace una sucursal implica la emisión de una factura. A la empresa le interesan los siguientes aspectos:**
+**1. Escenario/Caso-02 Gestion de Aeropuertos :**
 
 ## Prerequisitos de las APIS:
 **1.1 Desargar el archivo txt llamado Datos_Neo4j.txt**
