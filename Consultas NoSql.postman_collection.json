@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "93741b16-5996-4d9b-9e55-8b94f439f14f",
+		"name": "Consultas NoSql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37983961"
+	},
+	"item": [
+		{
+			"name": "Q02. Obtener la lista de empresas que trabajan en un aeropuerto específico",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/empresas/Aeropuerto Internacional Guadalajara",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empresas",
+						"Aeropuerto Internacional Guadalajara"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q11. Agregar una nueva ruta de vuelo entre dos aeropuertos con tres escalas (tres nodos intermedios) entre el origen y el destino",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo\": \"R11\",\r\n    \"origen\": \"Ciudad de México\",\r\n    \"destino\": \"Tijuana\",\r\n    \"duracion\": 3,\r\n    \"escalas\": [\"Cancún\", \"Monterrey\"],\r\n    \"empresaNombre\": \"VuelaConti\",\r\n    \"pilotoNombre\": \"Miguel Ramos\",\r\n    \"avionId\": \"AV2\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/ruta-nueva",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"ruta-nueva"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q15. Un aeropuerto será remodelado, debe ser eliminado y todas sus operaciones deben ser reasignadas",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/remodelar/Aeropuerto Internacional CDMX/Aeropuerto Internacional Cancún",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"remodelar",
+						"Aeropuerto Internacional CDMX",
+						"Aeropuerto Internacional Cancún"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q01. Obtener la lista de aeropuertos con más de 3 pistas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/aeropuertos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"aeropuertos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q03. Obtener la lista de aviones con una autonomía de vuelo mayor a 5000 millas.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/aviones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"aviones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q02. Obtener la lista de empresas que trabajan en un aeropuerto específico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/empresas/Aeropuerto Internacional Guadalajara",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empresas",
+						"Aeropuerto Internacional Guadalajara"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q04. Obtener la lista de pilotos que tienen licencia para volar una ruta específica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/pilotos/R10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pilotos",
+						"R10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q09. Obtener la lista de personal de tierra que tiene más de 3 certificaciones y que trabaja para empresas que tienen más de 20 aviones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/personal-tierra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"personal-tierra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q06. Eliminar una empresa que ya no trabaja en un aeropuerto específico, eliminando también la información asociada",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/eliminar-empresa/AeroMex/Aeropuerto Internacional Cancún",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"eliminar-empresa",
+						"AeroMex",
+						"Aeropuerto Internacional Cancún"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q17. Insertar un nuevo avion y asignarlo a una empresa ya existente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"AV7\",\r\n    \"modelo\": \"Embraer E190\",\r\n    \"millas_autonomia\": 4000,\r\n    \"numero_pasajeros\": 100,\r\n    \"numero_tripulacion\": 4,\r\n    \"fecha_revision\": \"2024-04-10\",\r\n    \"nombreEmpresa\": \"VuelaConti\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/aviones/nuevo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"aviones",
+						"nuevo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q18. Actualizar el numero de pistas de un aeropuerto ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"A2\",\r\n    \"numero_pistas\": 53\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/actualizar-pistas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"actualizar-pistas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q19. Actualizar de una empresa el numero de aviones que contiene y los países en los que no puede operar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"VuelaConti\",\r\n    \"numero_aviones\": 20,\r\n    \"paises_no_operar\": [\"China\", \"Rusia\", \"Irán\"]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/actualizar-empresa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"actualizar-empresa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q16. Insertar un aeropuerto y relacionarlo con una empresa ya existente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"A9\",\r\n    \"nombre\": \"Aeropuerto Internacional Mérida\",\r\n    \"ciudad\": \"Mazatlan\",\r\n    \"direccion\": \"Carretera Mérida-Cancún\",\r\n    \"numero_pistas\": 3,\r\n    \"nombreEmpresa\": \"EagleAir\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/insertar-aeropuerto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"insertar-aeropuerto"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

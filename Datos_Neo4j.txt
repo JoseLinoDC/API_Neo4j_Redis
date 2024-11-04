@@ -1,0 +1,296 @@
+// Crear nodos de Aeropuerto
+CREATE (a1:Aeropuerto {id: 'A1', nombre: 'Aeropuerto Internacional CDMX', ciudad: 'Ciudad de México', direccion: 'Av. Capitán Carlos Lazo', numero_pistas: 4})
+CREATE (a2:Aeropuerto {id: 'A2', nombre: 'Aeropuerto Internacional Guadalajara', ciudad: 'Guadalajara', direccion: 'Carretera Chapala', numero_pistas: 3})
+CREATE (a3:Aeropuerto {id: 'A3', nombre: 'Aeropuerto Internacional Monterrey', ciudad: 'Monterrey', direccion: 'Carretera Miguel Alemán', numero_pistas: 5})
+CREATE (a4:Aeropuerto {id: 'A4', nombre: 'Aeropuerto Internacional Cancún', ciudad: 'Cancún', direccion: 'Blvd. Kukulcan', numero_pistas: 4})
+CREATE (a5:Aeropuerto {id: 'A5', nombre: 'Aeropuerto Internacional Tijuana', ciudad: 'Tijuana', direccion: 'Av. Aeropuerto', numero_pistas: 3})
+CREATE (a6:Aeropuerto {id: 'A6', nombre: 'Aeropuerto Internacional Mazatlan', ciudad: 'Mazatlan', direccion: 'Av. Mexico', numero_pistas: 4})
+
+
+// Crear nodos de Empresa y relaciones con Aeropuertos
+CREATE (e1:Empresa {RFC: 'RFC1234', nombre: 'AeroMex', nacionalidad: 'Mexicana', direccion_sede: 'Av. Reforma', telefonos: ['1234567890'], numero_aviones: 15, tipo: 'nacional', pais: 'México', permiso_viajes_fuera_pais: true, paises_no_operar: []})
+CREATE (e2:Empresa {RFC: 'RFC5678', nombre: 'VuelaConti', nacionalidad: 'Española', direccion_sede: 'Calle Gran Vía', telefonos: ['9876543210'], numero_aviones: 22, tipo: 'continental', continente: 'Europa', paises_operacion: ['España', 'Francia', 'Italia'], paises_no_operar: ['Rusia']})
+CREATE (e3:Empresa {RFC: 'RFC9101', nombre: 'SkyWorld', nacionalidad: 'Internacional', direccion_sede: 'Calle Broadway', telefonos: ['555666777'], numero_aviones: 30, tipo: 'internacional', paises_no_operar: ['Corea del Norte', 'Irán', 'Siria']})
+CREATE (e4:Empresa {RFC: 'RFC1111', nombre: 'FlyHigh', nacionalidad: 'Alemana', direccion_sede: 'Calle Berlín', telefonos: ['123123123'], numero_aviones: 34, tipo: 'internacional', paises_no_operar: ['Afganistán', 'Pakistán']})
+CREATE (e5:Empresa {RFC: 'RFC2222', nombre: 'AirLink', nacionalidad: 'Canadiense', direccion_sede: 'Calle Ottawa', telefonos: ['234234234'], numero_aviones: 36, tipo: 'internacional', paises_no_operar: ['Cuba', 'Irán']})
+CREATE (e6:Empresa {RFC: 'RFC3333', nombre: 'JetLine', nacionalidad: 'Chilena', direccion_sede: 'Calle Santiago', telefonos: ['345345345'], numero_aviones: 8, tipo: 'continental', continente: 'Sudamérica', paises_operacion: ['Chile', 'Argentina', 'Perú'], paises_no_operar: []})
+CREATE (e7:Empresa {RFC: 'RFC4444', nombre: 'EagleAir', nacionalidad: 'Estadounidense', direccion_sede: 'Calle Washington', telefonos: ['456456456'], numero_aviones: 20, tipo: 'internacional', paises_no_operar: ['Corea del Norte', 'Siria']})
+CREATE (e8:Empresa {RFC: 'RFC5555', nombre: 'Oceanic', nacionalidad: 'Australiana', direccion_sede: 'Calle Sídney', telefonos: ['567567567'], numero_aviones: 18, tipo: 'continental', continente: 'Oceanía', paises_operacion: ['Australia', 'Nueva Zelanda'], paises_no_operar: []})
+
+
+// Crear relaciones entre Aeropuertos y Empresas
+CREATE (e1)-[:TRABAJA_EN]->(a1)
+CREATE (e1)-[:TRABAJA_EN]->(a2)
+CREATE (e1)-[:TRABAJA_EN]->(a3)
+CREATE (e2)-[:TRABAJA_EN]->(a3)
+CREATE (e2)-[:TRABAJA_EN]->(a2)
+CREATE (e4)-[:TRABAJA_EN]->(a3)
+CREATE (e3)-[:TRABAJA_EN]->(a4)
+CREATE (e3)-[:TRABAJA_EN]->(a1)
+CREATE (e4)-[:TRABAJA_EN]->(a1)
+CREATE (e4)-[:TRABAJA_EN]->(a2)
+CREATE (e5)-[:TRABAJA_EN]->(a3)
+CREATE (e6)-[:TRABAJA_EN]->(a5)
+CREATE (e7)-[:TRABAJA_EN]->(a4)
+CREATE (e8)-[:TRABAJA_EN]->(a5)
+CREATE (e8)-[:TRABAJA_EN]->(a1)
+CREATE (e5)-[:TRABAJA_EN]->(a6)
+CREATE (e2)-[:TRABAJA_EN]->(a6)
+
+
+// Crear nodos de Personal
+CREATE (p1:Piloto {id: 'P1', nacionalidad: 'Mexicana', pais_residencia: 'México', nombre: 'Juan Pérez', direccion: 'Calle del Valle', lengua_materna: 'Español', licencia: 'ATPL', ultima_evaluacion: '2024-01-15'})
+CREATE (p2:Piloto {id: 'P2', nacionalidad: 'Mexicana', pais_residencia: 'México', nombre: 'Carlos Méndez', direccion: 'Calle Reforma', lengua_materna: 'Español', licencia: 'ATPL', ultima_evaluacion: '2024-02-10'})
+CREATE (p3:Piloto {id: 'P3', nacionalidad: 'Mexicana', pais_residencia: 'México', nombre: 'Luis Hernández', direccion: 'Calle Juárez', lengua_materna: 'Español', licencia: 'ATPL', ultima_evaluacion: '2024-03-05'})
+CREATE (p4:Piloto {id: 'P4', nacionalidad: 'Mexicana', pais_residencia: 'México', nombre: 'Miguel Ramos', direccion: 'Calle Morelos', lengua_materna: 'Español', licencia: 'ATPL', ultima_evaluacion: '2024-01-25'})
+CREATE (p5:Piloto {id: 'P5', nacionalidad: 'Española', pais_residencia: 'España', nombre: 'Javier López', direccion: 'Calle Madrid', lengua_materna: 'Español', licencia: 'CPL', ultima_evaluacion: '2024-02-18'})
+CREATE (p6:Piloto {id: 'P6', nacionalidad: 'Francesa', pais_residencia: 'Francia', nombre: 'Jean-Claude Dubois', direccion: 'Av. Paris', lengua_materna: 'Francés', licencia: 'ATPL', ultima_evaluacion: '2024-03-12'})
+CREATE (p7:Piloto {id: 'P7', nacionalidad: 'Mexicana', pais_residencia: 'México', nombre: 'Ana Torres', direccion: 'Calle Insurgentes', lengua_materna: 'Español', licencia: 'CPL', ultima_evaluacion: '2024-02-28'})
+
+CREATE (p8:PersonalApoyo {id: 'P8', nacionalidad: 'Mexicana', pais_residencia: 'México', nombre: 'Ana López', direccion: 'Calle Reforma', lengua_materna: 'Español', idiomas: ['Español', 'Inglés'], telefono: '5544332211'})
+CREATE (p9:PersonalApoyo {id: 'P9', nacionalidad: 'Argentina', pais_residencia: 'Argentina', nombre: 'Laura Muñoz', direccion: 'Calle Libertad', lengua_materna: 'Español', idiomas: ['Español', 'Portugués'], telefono: '5411223344'})
+CREATE (p10:PersonalApoyo {id: 'P10', nacionalidad: 'Mexicana', pais_residencia: 'México', nombre: 'Jorge Campos', direccion: 'Calle Independencia', lengua_materna: 'Español', idiomas: ['Español', 'Inglés'], telefono: '5522113344'})
+CREATE (p11:PersonalApoyo {id: 'P11', nacionalidad: 'Canadiense', pais_residencia: 'Canadá', nombre: 'Emily Davis', direccion: 'Av. Montreal', lengua_materna: 'Inglés', idiomas: ['Inglés', 'Francés'], telefono: '6135543210'})
+
+CREATE (p12:PersonalTierra {id: 'P12', nacionalidad: 'Española', pais_residencia: 'España', nombre: 'Carlos González', direccion: 'Av. Madrid', lengua_materna: 'Español', tareas: ['Carga', 'Mantenimiento'], certificaciones: ['ISO9001', 'Seguridad', 'Primeros Auxilios', 'Operaciones de Tierra']})
+CREATE (p13:PersonalTierra {id: 'P13', nacionalidad: 'Mexicana', pais_residencia: 'México', nombre: 'María Fernández', direccion: 'Calle Insurgentes', lengua_materna: 'Español', tareas: ['Mantenimiento', 'Seguridad'], certificaciones: ['ISO9001', 'Seguridad', 'Primeros Auxilios', 'Gestión de Riesgos']})
+CREATE (p14:PersonalTierra {id: 'P14', nacionalidad: 'Canadiense', pais_residencia: 'Canadá', nombre: 'John Smith', direccion: 'Av. Toronto', lengua_materna: 'Inglés', tareas: ['Carga', 'Logística'], certificaciones: ['ISO9001', 'Seguridad', 'Manejo de Equipos', 'Primeros Auxilios']})
+CREATE (p15:PersonalTierra {id: 'P15', nacionalidad: 'Mexicana', pais_residencia: 'México', nombre: 'Luis Martínez', direccion: 'Calle Juárez', lengua_materna: 'Español', tareas: ['Carga', 'Mantenimiento'], certificaciones: ['ISO9001', 'Seguridad', 'Gestión de Residuos', 'Primeros Auxilios']})
+CREATE (p16:PersonalTierra {id: 'P16', nacionalidad: 'Española', pais_residencia: 'España', nombre: 'Laura García', direccion: 'Calle Sol', lengua_materna: 'Español', tareas: ['Seguridad', 'Mantenimiento'], certificaciones: ['ISO9001', 'Seguridad', 'Operaciones de Tierra', 'Primeros Auxilios']})
+
+
+// Crear relaciones entre Empresas y Personal
+CREATE (p1)-[:TRABAJA_PARA]->(e1)
+CREATE (p2)-[:TRABAJA_PARA]->(e1)
+CREATE (p3)-[:TRABAJA_PARA]->(e1)
+CREATE (p8)-[:TRABAJA_PARA]->(e1)
+CREATE (p9)-[:TRABAJA_PARA]->(e1)
+CREATE (p10)-[:TRABAJA_PARA]->(e1)
+CREATE (p12)-[:TRABAJA_PARA]->(e1)
+CREATE (p13)-[:TRABAJA_PARA]->(e1)
+CREATE (p14)-[:TRABAJA_PARA]->(e1)
+
+CREATE (p4)-[:TRABAJA_PARA]->(e2)
+CREATE (p5)-[:TRABAJA_PARA]->(e2)
+CREATE (p6)-[:TRABAJA_PARA]->(e2)
+CREATE (p11)-[:TRABAJA_PARA]->(e2)
+CREATE (p8)-[:TRABAJA_PARA]->(e2)
+CREATE (p9)-[:TRABAJA_PARA]->(e2)
+CREATE (p15)-[:TRABAJA_PARA]->(e2)
+CREATE (p16)-[:TRABAJA_PARA]->(e2)
+CREATE (p12)-[:TRABAJA_PARA]->(e2)
+
+//pilotos
+CREATE (p7)-[:TRABAJA_PARA]->(e3)
+CREATE (p1)-[:TRABAJA_PARA]->(e3)
+CREATE (p2)-[:TRABAJA_PARA]->(e3)
+//personal apoyo
+CREATE (p10)-[:TRABAJA_PARA]->(e3)
+CREATE (p11)-[:TRABAJA_PARA]->(e3)
+CREATE (p8)-[:TRABAJA_PARA]->(e3)
+//personal tierra
+CREATE (p13)-[:TRABAJA_PARA]->(e3)
+CREATE (p14)-[:TRABAJA_PARA]->(e3)
+CREATE (p15)-[:TRABAJA_PARA]->(e3)
+
+//pilotos
+CREATE (p3)-[:TRABAJA_PARA]->(e4)
+CREATE (p4)-[:TRABAJA_PARA]->(e4)
+CREATE (p5)-[:TRABAJA_PARA]->(e4)
+//personal apoyo
+CREATE (p9)-[:TRABAJA_PARA]->(e4)
+CREATE (p10)-[:TRABAJA_PARA]->(e4)
+CREATE (p11)-[:TRABAJA_PARA]->(e4)
+//personal tierra
+CREATE (p16)-[:TRABAJA_PARA]->(e4)
+CREATE (p12)-[:TRABAJA_PARA]->(e4)
+CREATE (p13)-[:TRABAJA_PARA]->(e4)
+
+//pilotos
+CREATE (p6)-[:TRABAJA_PARA]->(e5)
+CREATE (p7)-[:TRABAJA_PARA]->(e5)
+CREATE (p1)-[:TRABAJA_PARA]->(e5)
+//personal apoyo
+CREATE (p8)-[:TRABAJA_PARA]->(e5)
+CREATE (p9)-[:TRABAJA_PARA]->(e5)
+CREATE (p10)-[:TRABAJA_PARA]->(e5)
+//personal tierra
+CREATE (p14)-[:TRABAJA_PARA]->(e5)
+CREATE (p15)-[:TRABAJA_PARA]->(e5)
+CREATE (p16)-[:TRABAJA_PARA]->(e5)
+
+//pilotos
+CREATE (p2)-[:TRABAJA_PARA]->(e6)
+CREATE (p3)-[:TRABAJA_PARA]->(e6)
+CREATE (p4)-[:TRABAJA_PARA]->(e6)
+//personal apoyo
+CREATE (p11)-[:TRABAJA_PARA]->(e6)
+CREATE (p8)-[:TRABAJA_PARA]->(e6)
+CREATE (p9)-[:TRABAJA_PARA]->(e6)
+//personal tierra
+CREATE (p12)-[:TRABAJA_PARA]->(e6)
+CREATE (p13)-[:TRABAJA_PARA]->(e6)
+CREATE (p14)-[:TRABAJA_PARA]->(e6)
+
+//pilotos
+CREATE (p5)-[:TRABAJA_PARA]->(e7)
+CREATE (p6)-[:TRABAJA_PARA]->(e7)
+CREATE (p7)-[:TRABAJA_PARA]->(e7)
+//personal apoyo
+CREATE (p10)-[:TRABAJA_PARA]->(e7)
+CREATE (p11)-[:TRABAJA_PARA]->(e7)
+CREATE (p8)-[:TRABAJA_PARA]->(e7)
+//personal tierra
+CREATE (p15)-[:TRABAJA_PARA]->(e7)
+CREATE (p16)-[:TRABAJA_PARA]->(e7)
+CREATE (p12)-[:TRABAJA_PARA]->(e7)
+
+//pilotos
+CREATE (p1)-[:TRABAJA_PARA]->(e8)
+CREATE (p2)-[:TRABAJA_PARA]->(e8)
+CREATE (p3)-[:TRABAJA_PARA]->(e8)
+//personal apoyo
+CREATE (p9)-[:TRABAJA_PARA]->(e8)
+CREATE (p10)-[:TRABAJA_PARA]->(e8)
+CREATE (p11)-[:TRABAJA_PARA]->(e8)
+//personal tierra
+CREATE (p13)-[:TRABAJA_PARA]->(e8)
+CREATE (p14)-[:TRABAJA_PARA]->(e8)
+CREATE (p15)-[:TRABAJA_PARA]->(e8)
+
+
+// Crear nodos de Aviones
+CREATE (av1:Avion {id: 'AV1', modelo: 'Boeing 737', millas_autonomia: 6000, numero_pasajeros: 180, numero_tripulacion: 6, fecha_revision: '2024-03-01'})
+CREATE (av2:Avion {id: 'AV2', modelo: 'Airbus A320', millas_autonomia: 5000, numero_pasajeros: 150, numero_tripulacion: 5, fecha_revision: '2024-02-20'})
+CREATE (av3:Avion {id: 'AV3', modelo: 'Boeing 747', millas_autonomia: 7000, numero_pasajeros: 400, numero_tripulacion: 8, fecha_revision: '2024-01-10'})
+CREATE (av4:Avion {id: 'AV4', modelo: 'Airbus 350', millas_autonomia: 8000, numero_pasajeros: 600, numero_tripulacion: 10, fecha_revision: '2024-02-10'})
+CREATE (av5:Avion {id: 'AV5', modelo: 'B-2', millas_autonomia: 10000, numero_pasajeros: 10, numero_tripulacion: 4, fecha_revision: '2024-01-05'})
+
+
+// Crear relaciones entre Empresas y Aviones
+CREATE (av1)-[:PERTENECE_A]->(e1)
+CREATE (av3)-[:PERTENECE_A]->(e1)
+CREATE (av4)-[:PERTENECE_A]->(e1)
+
+CREATE (av2)-[:PERTENECE_A]->(e2)
+CREATE (av5)-[:PERTENECE_A]->(e2)
+CREATE (av1)-[:PERTENECE_A]->(e2)
+
+CREATE (av3)-[:PERTENECE_A]->(e3)
+CREATE (av1)-[:PERTENECE_A]->(e3)
+
+CREATE (av5)-[:PERTENECE_A]->(e3)
+CREATE (av1)-[:PERTENECE_A]->(e3)
+
+CREATE (av2)-[:PERTENECE_A]->(e4)
+CREATE (av5)-[:PERTENECE_A]->(e4)
+
+CREATE (av2)-[:PERTENECE_A]->(e5)
+CREATE (av1)-[:PERTENECE_A]->(e5)
+
+CREATE (av1)-[:PERTENECE_A]->(e6)
+CREATE (av3)-[:PERTENECE_A]->(e6)
+
+CREATE (av1)-[:PERTENECE_A]->(e7)
+CREATE (av4)-[:PERTENECE_A]->(e7)
+
+CREATE (av2)-[:PERTENECE_A]->(e8)
+CREATE (av5)-[:PERTENECE_A]->(e8)
+
+
+
+// Crear nodos de Rutas y relaciones con múltiples operadores
+CREATE (r1:Ruta {codigo: 'R1', origen: 'Ciudad de México', destino: 'Cancún', escalas: ['Aeropuerto Internacional Guadalajara'], duracion: 2.5})
+CREATE (r2:Ruta {codigo: 'R2', origen: 'Guadalajara', destino: 'Monterrey', escalas: ['Aeropuerto Internacional Tijuana'], duracion: 1.5})
+CREATE (r3:Ruta {codigo: 'R3', origen: 'Madrid', destino: 'París', escalas: ['Aeropuerto Internacional Monterrey'], duracion: 2.0})
+CREATE (r4:Ruta {codigo: 'R4', origen: 'Ciudad de México', destino: 'Nueva York', escalas: ['Dallas', 'Atlanta', 'Washington'], duracion: 8})
+CREATE (r5:Ruta {codigo: 'R5', origen: 'Cancún', destino: 'Madrid', escalas: ['Aeropuerto Internacional Monterrey'], duracion: 9.0})
+CREATE (r6:Ruta {codigo: 'R6', origen: 'Tijuana', destino: 'Nueva York', escalas: ['Aeropuerto Internacional CDMX'], duracion: 6.5})
+CREATE (r7:Ruta {codigo: 'R7', origen: 'Monterrey', destino: 'Guadalajara', escalas: ['Aeropuerto Internacional Cancún'], duracion: 1.8})
+CREATE (r8:Ruta {codigo: 'R8', origen: 'Guadalajara', destino: 'Tijuana', escalas: ['Aeropuerto Internacional Monterrey'], duracion: 3.0})
+CREATE (r9:Ruta {codigo: 'R9', origen: 'Cancún', destino: 'París', escalas: ['New York', 'Madrid'], duracion: 7})
+CREATE (r10:Ruta {codigo: 'R10', origen: 'Cancún', destino: 'Los Angeles', escalas: ['Monterrey', 'Tijuana', 'California'], duracion: 4})
+
+
+
+// Asignar Rutas a Empresas (múltiples empresas para algunas rutas)
+CREATE (e1)-[:OPERA]->(r1)
+CREATE (e3)-[:OPERA]->(r1)
+CREATE (e2)-[:OPERA]->(r2)
+CREATE (e4)-[:OPERA]->(r2)
+CREATE (e3)-[:OPERA]->(r3)
+CREATE (e5)-[:OPERA]->(r3)
+CREATE (e6)-[:OPERA]->(r4)
+CREATE (e7)-[:OPERA]->(r4)
+CREATE (e8)-[:OPERA]->(r4)
+CREATE (e2)-[:OPERA]->(r4)
+CREATE (e8)-[:OPERA]->(r5)
+CREATE (e3)-[:OPERA]->(r5)
+CREATE (e4)-[:OPERA]->(r6)
+CREATE (e7)-[:OPERA]->(r6)
+CREATE (e2)-[:OPERA]->(r6)
+CREATE (e5)-[:OPERA]->(r6)
+CREATE (e1)-[:OPERA]->(r7)
+CREATE (e2)-[:OPERA]->(r7)
+CREATE (e5)-[:OPERA]->(r8)
+CREATE (e6)-[:OPERA]->(r8)
+CREATE (e3)-[:OPERA]->(r9)
+CREATE (e8)-[:OPERA]->(r9)
+CREATE (e1)-[:OPERA]->(r9)
+CREATE (e5)-[:OPERA]->(r10)
+CREATE (e2)-[:OPERA]->(r10)
+CREATE (e1)-[:OPERA]->(r10)
+
+
+
+// Asignar Rutas a Pilotos y Aviones
+CREATE (p1)-[:PUEDE_VOLAR]->(r1)
+CREATE (p2)-[:PUEDE_VOLAR]->(r1)
+CREATE (p3)-[:PUEDE_VOLAR]->(r1)
+CREATE (p4)-[:PUEDE_VOLAR]->(r1)
+CREATE (p5)-[:PUEDE_VOLAR]->(r1)
+
+CREATE (p6)-[:PUEDE_VOLAR]->(r2)
+CREATE (p7)-[:PUEDE_VOLAR]->(r2)
+CREATE (p1)-[:PUEDE_VOLAR]->(r2)
+CREATE (p2)-[:PUEDE_VOLAR]->(r2)
+
+CREATE (p3)-[:PUEDE_VOLAR]->(r3)
+CREATE (p4)-[:PUEDE_VOLAR]->(r3)
+CREATE (p5)-[:PUEDE_VOLAR]->(r3)
+CREATE (p6)-[:PUEDE_VOLAR]->(r3)
+
+CREATE (p1)-[:PUEDE_VOLAR]->(r4)
+CREATE (p2)-[:PUEDE_VOLAR]->(r4)
+CREATE (p3)-[:PUEDE_VOLAR]->(r4)
+CREATE (p4)-[:PUEDE_VOLAR]->(r4)
+
+CREATE (p5)-[:PUEDE_VOLAR]->(r5)
+CREATE (p6)-[:PUEDE_VOLAR]->(r5)
+CREATE (p7)-[:PUEDE_VOLAR]->(r5)
+CREATE (p1)-[:PUEDE_VOLAR]->(r5)
+
+CREATE (p2)-[:PUEDE_VOLAR]->(r6)
+CREATE (p3)-[:PUEDE_VOLAR]->(r6)
+CREATE (p4)-[:PUEDE_VOLAR]->(r6)
+CREATE (p5)-[:PUEDE_VOLAR]->(r6)
+
+CREATE (p6)-[:PUEDE_VOLAR]->(r7)
+CREATE (p7)-[:PUEDE_VOLAR]->(r7)
+CREATE (p1)-[:PUEDE_VOLAR]->(r7)
+CREATE (p2)-[:PUEDE_VOLAR]->(r7)
+
+CREATE (p3)-[:PUEDE_VOLAR]->(r8)
+CREATE (p4)-[:PUEDE_VOLAR]->(r8)
+CREATE (p5)-[:PUEDE_VOLAR]->(r8)
+CREATE (p6)-[:PUEDE_VOLAR]->(r8)
+
+CREATE (p7)-[:PUEDE_VOLAR]->(r9)
+CREATE (p1)-[:PUEDE_VOLAR]->(r9)
+CREATE (p2)-[:PUEDE_VOLAR]->(r9)
+CREATE (p3)-[:PUEDE_VOLAR]->(r9)
+
+CREATE (p4)-[:PUEDE_VOLAR]->(r10)
+CREATE (p5)-[:PUEDE_VOLAR]->(r10)
+CREATE (p6)-[:PUEDE_VOLAR]->(r10)
+CREATE (p7)-[:PUEDE_VOLAR]->(r10)
