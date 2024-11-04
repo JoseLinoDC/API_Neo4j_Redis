@@ -26,7 +26,7 @@ docker pull joselino25/api_neo4j_redis:v1.0
 ```
 **1.5 Inicia el contenedor de la imagen que se acaba de descargar**
 ```
-docker run -d --name api_neo4j_redis --network my_network -p 3000:3000 joselino25/api_neo4j_redis:v1.0
+docker run -d --name api_neo4j_redis -p 3000:3000 joselino25/api_neo4j_redis:v1.0
 ```
 
 **1.6 Utilizar los datos del archivo .txt que se encuentra en el proyecto en Neo4j**
