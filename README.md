@@ -35,8 +35,8 @@ http://localhost:7474/browser/
 ```
 
 > [!NOTE]
-> **Si desea hacer pruebas de la API con postman use la colección que se encuentra en el proyecto e impórtela en Postman**
-> **Nombre del archivo:** [Consultas NoSql.postman_collection.json](ruta/del/archivo/Consultas%20NoSql.postman_collection.json)
+> **Si desea hacer pruebas de la API con Postman, use la colección que se encuentra en el proyecto e impórtela en Postman**
+> **Nombre del archivo:** [Consultas NoSql.postman_collection.json](./Consultas%20NoSql.postman_collection.json)
 
 
 ## Consultas Cypher
