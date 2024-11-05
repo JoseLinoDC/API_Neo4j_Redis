@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  neo4j:
+    image: neo4j
+    container_name: neo4j01
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=none
+    networks:
+      labs:
+        ipv4_address: 172.19.0.3
+  redis:
+    image: redis/redis-stack:latest
+    container_name: redis01
+    ports:
+      - "6379:6379"
+      - "8001:8001"
+    networks:
+      labs:
+        ipv4_address: 172.19.0.2
+  rutas-api:
+    image: joselino25/api_neo4j_redis:v1.0
+    container_name: rutas-api
+    ports:
+      - "3000:3000"
+    depends_on: 
+      - neo4j
+      - redis
+    networks:
+      labs:
+        ipv4_address: 172.19.0.4
+networks:
+  labs:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.19.0.0/16

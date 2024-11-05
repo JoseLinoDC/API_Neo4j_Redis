@@ -8,28 +8,14 @@
 **1. Escenario/Caso-02 Gestion de Aeropuertos :**
 
 ## Prerequisitos de la API:
-**1.1 Desargar el archivo txt llamado Datos_Neo4j.txt**
+**1.1 Desargar el archivo .txt llamado Datos_Neo4j.txt**
 
-**1.2 Inicializar primeramente el contenedor de redis**
+**1.2 Inicializar el docker-compose**
 ```
-docker run -d --name redis01 -p 6379:6379 redis:latest
-```
-
-**1.3 Inicializar el contenedor de Neo4j**
-```
-Docker run -d --name neo01 -p 7474:7474 -p 7687:7687 --env=NEO4J_AUTH=none neo4j
+docker-compose up -d
 ```
 
-**1.4. Descargar desde DockerHub la imagen de la API con el siguiente comando:**
-```
-docker pull joselino25/api_neo4j_redis:v1.0
-```
-**1.5 Inicia el contenedor de la imagen que se acaba de descargar**
-```
-docker run -d --name api_neo4j_redis -p 3000:3000 joselino25/api_neo4j_redis:v1.0
-```
-
-**1.6 Utilizar los datos del archivo .txt que se encuentra en el proyecto en Neo4j**
+**1.3 Utilizar los datos del archivo .txt que se encuentra en el proyecto e insertarlos en Neo4j**
 ```
 http://localhost:7474/browser/
 ```
