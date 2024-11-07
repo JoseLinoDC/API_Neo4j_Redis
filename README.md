@@ -10,12 +10,17 @@
 ## Prerequisitos de la API:
 **1.1 Desargar el archivo .txt llamado Datos_Neo4j.txt**
 
-**1.2 Inicializar el docker-compose**
+**1.2. Descargar desde DockerHub la imagen de la API con el siguiente comando:**
+```
+docker pull joselino25/api_neo4j_redis:v1.0
+```
+
+**1.3 Inicializar el docker-compose**
 ```
 docker-compose up -d
 ```
 
-**1.3 Utilizar los datos del archivo .txt que se encuentra en el proyecto e insertarlos en Neo4j**
+**1.4 Utilizar los datos del archivo .txt que se encuentra en el proyecto e insertarlos en Neo4j**
 ```
 http://localhost:7474/browser/
 ```
