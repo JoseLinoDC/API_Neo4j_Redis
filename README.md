@@ -15,7 +15,7 @@
 docker pull joselino25/api_neo4j_redis:v1.0
 ```
 
-**1.3 Inicializar el docker-compose**
+**1.3 Descargar e inicializar el [docker-compose.yml](./docker-compose.yml) con el siguiente comando**
 ```
 docker-compose up -d
 ```
