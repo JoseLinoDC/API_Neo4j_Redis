@@ -8,7 +8,7 @@
 **1. Escenario/Caso-02 Gestion de Aeropuertos :**
 
 ## Prerequisitos de la API:
-**1.1 Desargar el archivo .txt llamado Datos_Neo4j.txt**
+**1.1 Desargar el archivo .txt llamado [Datos_Neo4j.txt](./Datos_Neo4j.txt).**
 
 **1.2. Descargar desde DockerHub la imagen de la API con el siguiente comando:**
 ```
